@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>实习周报</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+    <div class="profile">
+        <p class="eyebrow">Internship Weekly Report</p>
+        <h1>实习周报</h1>
+        <dl class="meta">
+            <div>
+                <dt>姓名</dt>
+                <dd>王好</dd>
+            </div>
+            <div>
+                <dt>部门</dt>
+                <dd>MUX 酷狗设计部</dd>
+            </div>
+            <div>
+                <dt>小组</dt>
+                <dd>社娱设计小组</dd>
+            </div>
+            <div>
+                <dt>实习时间</dt>
+                <dd>6.15 至今</dd>
+            </div>
+        </dl>
+    </div>
+</header>
+
+<main class="container">
+    <!-- 最新一周 默认展开 -->
+    <section class="week-block">
+        <div class="week-title">
+            <h2>第一周实习周报</h2>
+            <span class="toggle-btn">点击收起/展开</span>
+        </div>
+        <div class="week-content">
+            <div class="section-card">
+                <h3>工作总结</h3>
+                <table class="review-table">
+                    <thead>
+                        <tr>
+                            <th>成长性</th>
+                            <th>待改进</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>1. 快速熟悉团队业务规范、平台UI设计标准，完成内部素材库与组件库学习。</p>
+                                <p>2. 独立完成基础页面视觉初稿，掌握需求拆解、信息分层、营销氛围基础搭建流程。</p>
+                            </td>
+                            <td>
+                                <p>1. 页面细节把控不足，间距、字重、模块比例统一性较差，后续高频对标规范自查。</p>
+                                <p>2. 跨角色沟通逻辑较弱，梳理提案固定按照背景-目标-产出结构汇报。</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="section-card">
+                <h3>工作小结</h3>
+                <p>本周完成入职业务熟悉，落地基础页面视觉方案，完整走完需求理解、页面搭建、初稿输出全流程，积累平台设计实战经验。</p>
+            </div>
+            <div class="section-card">
+                <h3>项目总结</h3>
+                <h4>Project 01：平台基础视觉页面设计</h4>
+                <p>围绕平台基础浏览页面搭建视觉框架，统一卡片、控件、文字层级，输出可迭代基础视觉稿，适配平台移动端浏览场景。</p>
+                <div class="img-gallery">
+                    <!-- 全部路径匹配你仓库 WEEK 2 + .jpeg 格式 -->
+                    <img src="WEEK 2/M5 1080_2340.jpeg" alt="页面设计稿1" class="preview-img">
+                    <img src="WEEK 2/M5 1126_2438.jpeg" alt="页面设计稿2" class="preview-img">
+                    <img src="WEEK 2/M5 480_480.jpeg" alt="组件细节图" class="preview-img">
+                    <img src="WEEK 2/M5 640_1136.jpeg" alt="版式参考图" class="preview-img">
+                    <img src="WEEK 2/M5 720_1280.jpeg" alt="移动端效果图" class="preview-img">
+                    <img src="WEEK 2/M5 750_1334.jpeg" alt="弹窗视觉稿" class="preview-img">
+                    <img src="WEEK 2/M6a 1080-2340-2.jpeg" alt="延展方案1" class="preview-img">
+                    <img src="WEEK 2/M6a 1126-2438-1.jpeg" alt="延展方案2" class="preview-img">
+                    <img src="WEEK 2/M6a 480_480.jpeg" alt="图标素材" class="preview-img">
+                    <img src="WEEK 2/M6a 640-1136-1.jpeg" alt="排版参考" class="preview-img">
+                    <img src="WEEK 2/M6a 720_1080.jpeg" alt="氛围图" class="preview-img">
+                    <img src="WEEK 2/M6a 750_1334-1.jpeg" alt="活动头图" class="preview-img">
+                    <img src="WEEK 2/M6b 1080_2340-1.jpeg" alt="迭代版本1" class="preview-img">
+                    <img src="WEEK 2/M6b 1126_2438-3.jpeg" alt="迭代版本2" class="preview-img">
+                    <img src="WEEK 2/M6b 480_480-1.jpeg" alt="图标优化稿" class="preview-img">
+                    <img src="WEEK 2/M6b 640_1136-1.jpeg" alt="分层细节稿" class="preview-img">
+                    <img src="WEEK 2/M6b 720_1280-1.jpeg" alt="完整页面稿" class="preview-img">
+                    <img src="WEEK 2/M6b 750_1334-2.jpeg" alt="多版本对比图" class="preview-img">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- 图片全屏放大弹窗 -->
+<div class="img-modal" id="imgModal">
+    <span class="close-modal">&times;</span>
+    <img id="modalImg" alt="放大预览">
+</div>
+
+<script>
+    // 折叠展开功能
+    document.querySelectorAll('.week-title').forEach(title => {
+        title.addEventListener('click', () => {
+            title.parentElement.classList.toggle('collapsed');
+        })
+    })
+    // 图片点击放大弹窗
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeBtn = document.querySelector('.close-modal');
+    document.querySelectorAll('.preview-img').forEach(img => {
+        img.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            modalImg.src = img.src;
+        })
+    })
+    closeBtn.onclick = () => modal.style.display = 'none';
+    modal.addEventListener('click', e => {
+        if (e.target === modal) modal.style.display = 'none';
+    })
+</script>
+</body>
+</html>
